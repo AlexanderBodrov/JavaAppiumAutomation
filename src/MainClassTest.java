@@ -1,13 +1,30 @@
 import org.junit.Assert;
 import org.junit.Test;
 
-public class MainClassTest extends MainClass
-{
-    @Test
-    public void testGetLocalNumber(){
-        int actual = getLocalNumber();
-        int expected = 14;
+public class MainClassTest extends MainClass {
+    String actual = getClassString();
+    String wordOne = "hello";
+    String wordTwo = "Hello";
+    boolean state = false;
 
-        Assert.assertTrue("The number is not equals " + expected, actual == expected);
+    @Test
+    public void testGetClassString() {
+        String actual = getClassString();
+        String wordOne = "hello";
+        String wordTwo = "Hello";
+
+        Assert.assertTrue(actual + " has no " + wordOne + " or " + wordTwo, checkContain());
+    }
+
+    public boolean checkContain() {
+        if (actual.contains(wordOne)) {
+            state = true;
+        }
+
+        if (actual.contains(wordTwo)) {
+            state = true;
+        }
+
+        return state;
     }
 }

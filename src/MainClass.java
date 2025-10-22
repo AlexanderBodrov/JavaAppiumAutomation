@@ -1,6 +1,7 @@
 public class MainClass{
-    int actual = 14;
-    public int getLocalNumber() {
-        return actual;
+    private String class_string = "Hello, world";
+
+    public String getClassString() {
+        return class_string;
     }
 }
